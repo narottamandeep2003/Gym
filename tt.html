@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            margin: 0;
+            padding: 0;
+
+        }
+        .man{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+           z-index: -100;
+            overflow: hidden;
+            justify-content: flex-end;
+        }
+        .mp
+
+        {
+            width: 60%;
+            height: 100%;
+            background-color: rgb(250, 224, 191);
+            clip-path: circle(92.1% at 100% 50%);
+
+        }
+        .in{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #feet
+        {
+            margin: 30px;
+        }
+        #inches
+        {
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="man">
+        <div class="mp"></div>
+    </div>
+     
+    <div class="in">
+
+       <input type="number" name="feet" id="feet" >
+
+       <input type="number" name="inches" id="inches">
+    </div>
+</body>
+<script>
+    let feet =document.getElementById("feet")
+    let inches =document.getElementById("inches")
+    feet.addEventListener('input',function()
+    {
+        let f=feet.value
+        inches.value=f*12
+    })
+    inches.addEventListener('input',function()
+    {
+        let f=inches.value
+        feet.value=f/12
+    })
+</script>
+</html>
